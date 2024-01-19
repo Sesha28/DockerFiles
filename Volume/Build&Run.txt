@@ -1,0 +1,22 @@
+docker build -t sesh-app .
+docker run --name sesh-app-cont -d -p 8889:80 sesh-app
+Then Browse 
+	http://localhost:8888/	
+	
+Clean Up:
+docker container rm sesh-app -f
+# docker image rm sesh-app -f dont do this if u want to push image to your docker hub account
+
+# Let us Push this image into my {your} Docker Account
+
+docker login
+docker tag the-core-app sesha1936/sesh-app
+docker push sesha1936/sesh-app
+docker run --name sesh-app-cont -d -p 8989:6666 sesha1936/sesh-app
+docker container rm sesh-app-cont -f
+
+# please copy paste the index.html to that folder C:/docker_volume
+# reference : https://www.youtube.com/watch?v=BefiUTwJobg
+docker container run --name sesh-app-cont -v C:/docker_volume/httpd-ex:/usr/local/apache2/htdocs -d -p 8889:80 sesh-app
+
+kubectl exec -it pod-b -- sh
