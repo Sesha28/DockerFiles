@@ -15,6 +15,7 @@ docker push sesha1936/sesh-app
 docker run --name sesh-app-cont -d -p 8989:6666 sesha1936/sesh-app
 docker container rm sesh-app-cont -f
 
+# create a folder in C drive {all lower cases} C:/docker_volume
 # please copy paste the index.html to that folder C:/docker_volume
 # reference : https://www.youtube.com/watch?v=BefiUTwJobg
 docker container run --name sesh-app-cont -v C:/docker_volume/httpd-ex:/usr/local/apache2/htdocs -d -p 8889:80 sesh-app
